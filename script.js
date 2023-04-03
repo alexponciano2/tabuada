@@ -6,11 +6,17 @@ function gerar(){
     let select = Number(txtsel.value)
 
     txtsel.innerHTML = ''
-    for (let c = 1; c <= 10; c++) {        
-        let res = numero * c
+
+    if(txtnum.value.length == 0){
+        alert('Por favor digite um número')
+    }else{
+        for (let c = 1; c <= 10; c++) {
         let option1 = document.createElement('option')
-        option1.text = `${numero} x ${c} = ${res}`
-        txtsel.add(option1)
+        option1.text = `${numero} x ${c} = ${numero * c}`
+        option1.value = `tab${c}`
+        txtsel.appendChild(option1)
         
-    }   
+    } 
+    }
+      
 }
